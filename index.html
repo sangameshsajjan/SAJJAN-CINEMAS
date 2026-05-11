@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SAJJAN CINEMAS — Premium Streaming</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- PRELOADER -->
+  <div id="preloader">
+    <div class="preloader-inner">
+      <div class="preloader-logo">SAJJAN CINEMAS</div>
+      <div class="preloader-bar"><div class="preloader-fill"></div></div>
+      <div class="preloader-text">Loading your world of entertainment...</div>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <span class="logo-accent">SAJJAN CINEMAS</span>.COM
+      </div>
+      <div class="nav-links" id="navLinks">
+        <a href="#" class="nav-link active" data-tab="home">Home</a>
+        <a href="#" class="nav-link" data-tab="movies">Movies</a>
+        <a href="#" class="nav-link" data-tab="series">TV Series</a>
+        <a href="#" class="nav-link" data-tab="genres">Genres</a>
+      </div>
+      <div class="nav-right">
+        <div class="search-wrapper" id="searchWrapper">
+          <input type="text" id="searchInput" placeholder="Search titles..." autocomplete="off"/>
+          <button class="search-btn" id="searchBtn">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          </button>
+        </div>
+        <button class="watchlist-icon" id="watchlistBtn" title="My Watchlist">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+          <span class="watchlist-badge" id="watchlistCount">0</span>
+        </button>
+        <button class="hamburger" id="hamburger">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section id="hero">
+    <div class="hero-bg" id="heroBg"></div>
+    <div class="hero-gradient"></div>
+    <div class="hero-content" id="heroContent">
+      <div class="hero-labels" id="heroLabels"></div>
+      <h1 class="hero-title" id="heroTitle">Loading...</h1>
+      <div class="hero-meta" id="heroMeta"></div>
+      <p class="hero-desc" id="heroDesc"></p>
+      <div class="hero-actions">
+        <button class="btn-play" id="heroPlay">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          Play Now
+        </button>
+        <button class="btn-info" id="heroInfo">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          More Info
+        </button>
+        <button class="btn-add" id="heroWatchlist">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          Watchlist
+        </button>
+      </div>
+    </div>
+    <div class="hero-dots" id="heroDots"></div>
+    <button class="hero-arrow left" id="heroPrev">&#10094;</button>
+    <button class="hero-arrow right" id="heroNext">&#10095;</button>
+  </section>
+
+  <!-- GENRE FILTER -->
+  <section id="genreBar">
+    <div class="genre-inner">
+      <span class="genre-label">Genre:</span>
+      <div class="genre-pills" id="genrePills">
+        <button class="pill active" data-genre="All">All</button>
+        <button class="pill" data-genre="Action">Action</button>
+        <button class="pill" data-genre="Drama">Drama</button>
+        <button class="pill" data-genre="Thriller">Thriller</button>
+        <button class="pill" data-genre="Sci-Fi">Sci-Fi</button>
+        <button class="pill" data-genre="Romance">Romance</button>
+        <button class="pill" data-genre="Fantasy">Fantasy</button>
+        <button class="pill" data-genre="Comedy">Comedy</button>
+        <button class="pill" data-genre="Crime">Crime</button>
+        <button class="pill" data-genre="Biography">Biography</button>
+        <button class="pill" data-genre="Horror">Horror</button>
+        <button class="pill" data-genre="Mystery">Mystery</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIEW TABS -->
+  <section id="viewTabs">
+    <div class="tabs-inner">
+      <button class="tab active" data-view="all">All Content</button>
+      <button class="tab" data-view="movie">Movies Only</button>
+      <button class="tab" data-view="series">TV Series Only</button>
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <main id="mainContent">
+
+    <div id="normalView">
+      <!-- TRENDING -->
+      <section class="row-section">
+        <div class="row-header">
+          <h2 class="row-title"><span class="fire">🔥</span> Trending Now</h2>
+        </div>
+        <div class="row-wrap">
+          <button class="arrow-btn left" data-target="trendingRow">&#10094;</button>
+          <div class="cards-row" id="trendingRow"></div>
+          <button class="arrow-btn right" data-target="trendingRow">&#10095;</button>
+        </div>
+      </section>
+
+      <!-- TOP RATED -->
+      <section class="row-section">
+        <div class="row-header">
+          <h2 class="row-title"><span class="star-ic">⭐</span> Top Rated</h2>
+        </div>
+        <div class="row-wrap">
+          <button class="arrow-btn left" data-target="topratedRow">&#10094;</button>
+          <div class="cards-row" id="topratedRow"></div>
+          <button class="arrow-btn right" data-target="topratedRow">&#10095;</button>
+        </div>
+      </section>
+
+      <!-- TELUGU -->
+      <section class="row-section lang-row" id="teluguSec">
+        <div class="row-header">
+          <h2 class="row-title">🎭 Telugu Cinema</h2>
+          <span class="row-badge telugu-badge">20 Titles</span>
+        </div>
+        <div class="row-wrap">
+          <button class="arrow-btn left" data-target="teluguRow">&#10094;</button>
+          <div class="cards-row" id="teluguRow"></div>
+          <button class="arrow-btn right" data-target="teluguRow">&#10095;</button>
+        </div>
+      </section>
+
+      <!-- HINDI -->
+      <section class="row-section lang-row" id="hindiSec">
+        <div class="row-header">
+          <h2 class="row-title">🎭 Hindi Cinema</h2>
+          <span class="row-badge hindi-badge">20 Titles</span>
+        </div>
+        <div class="row-wrap">
+          <button class="arrow-btn left" data-target="hindiRow">&#10094;</button>
+          <div class="cards-row" id="hindiRow"></div>
+          <button class="arrow-btn right" data-target="hindiRow">&#10095;</button>
+        </div>
+      </section>
+
+      <!-- TAMIL -->
+      <section class="row-section lang-row" id="tamilSec">
+        <div class="row-header">
+          <h2 class="row-title">🎭 Tamil Cinema</h2>
+          <span class="row-badge tamil-badge">20 Titles</span>
+        </div>
+        <div class="row-wrap">
+          <button class="arrow-btn left" data-target="tamilRow">&#10094;</button>
+          <div class="cards-row" id="tamilRow"></div>
+          <button class="arrow-btn right" data-target="tamilRow">&#10095;</button>
+        </div>
+      </section>
+
+      <!-- KANNADA -->
+      <section class="row-section lang-row" id="kannadaSec">
+        <div class="row-header">
+          <h2 class="row-title">🎭 Kannada Cinema</h2>
+          <span class="row-badge kannada-badge">10 Titles</span>
+        </div>
+        <div class="row-wrap">
+          <button class="arrow-btn left" data-target="kannadaRow">&#10094;</button>
+          <div class="cards-row" id="kannadaRow"></div>
+          <button class="arrow-btn right" data-target="kannadaRow">&#10095;</button>
+        </div>
+      </section>
+
+      <!-- HOLLYWOOD -->
+      <section class="row-section lang-row" id="hwSec">
+        <div class="row-header">
+          <h2 class="row-title">🌟 Hollywood Blockbusters</h2>
+          <span class="row-badge hw-badge">20 Titles</span>
+        </div>
+        <div class="row-wrap">
+          <button class="arrow-btn left" data-target="hollywoodRow">&#10094;</button>
+          <div class="cards-row" id="hollywoodRow"></div>
+          <button class="arrow-btn right" data-target="hollywoodRow">&#10095;</button>
+        </div>
+      </section>
+
+      <!-- TV SERIES -->
+      <section class="row-section lang-row" id="tvSec">
+        <div class="row-header">
+          <h2 class="row-title">📺 Top TV Series</h2>
+          <span class="row-badge tv-badge">20 Titles</span>
+        </div>
+        <div class="row-wrap">
+          <button class="arrow-btn left" data-target="seriesRow">&#10094;</button>
+          <div class="cards-row" id="seriesRow"></div>
+          <button class="arrow-btn right" data-target="seriesRow">&#10095;</button>
+        </div>
+      </section>
+    </div>
+
+    <!-- FILTERED GRID VIEW -->
+    <div id="filteredView" style="display:none;">
+      <section class="row-section">
+        <div class="row-header">
+          <h2 class="row-title" id="filteredTitle">Results</h2>
+          <span class="result-count" id="resultCount"></span>
+        </div>
+        <div class="movie-grid" id="filteredGrid"></div>
+      </section>
+    </div>
+
+  </main>
+
+  <!-- MOVIE DETAIL MODAL -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal-box" id="movieModal">
+      <button class="modal-close-btn" id="modalClose">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <div class="modal-backdrop-img" id="modalBackdrop"></div>
+      <div class="modal-backdrop-fade"></div>
+      <div class="modal-content-wrap">
+        <div class="modal-left">
+          <img class="modal-poster-img" id="modalPoster" src="" alt="Poster"/>
+          <div class="imdb-block">
+            <span class="imdb-label">IMDb</span>
+            <span class="imdb-val" id="modalImdb">-</span>
+          </div>
+        </div>
+        <div class="modal-right">
+          <h2 class="modal-movie-title" id="modalTitle"></h2>
+          <div class="modal-row-meta" id="modalRowMeta"></div>
+          <div class="modal-tag-row" id="modalTagRow"></div>
+          <p class="modal-desc-text" id="modalDescText"></p>
+          <div class="modal-info-grid">
+            <div class="info-row">
+              <span class="info-key">Director</span>
+              <span class="info-val" id="infoDirector"></span>
+            </div>
+            <div class="info-row">
+              <span class="info-key">Cast</span>
+              <span class="info-val" id="infoCast"></span>
+            </div>
+            <div class="info-row">
+              <span class="info-key">Duration</span>
+              <span class="info-val" id="infoDuration"></span>
+            </div>
+            <div class="info-row">
+              <span class="info-key">Language</span>
+              <span class="info-val" id="infoLanguage"></span>
+            </div>
+          </div>
+          <div class="modal-btn-row">
+            <button class="btn-play modal-play-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              Play Now
+            </button>
+            <button class="modal-wl-btn" id="modalWlBtn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+              <span id="modalWlText">Add to Watchlist</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WATCHLIST PANEL -->
+  <div class="wl-panel" id="wlPanel">
+    <div class="wl-panel-head">
+      <h3>My Watchlist</h3>
+      <button id="wlClose">✕</button>
+    </div>
+    <div class="wl-panel-body" id="wlBody">
+      <div class="wl-empty" id="wlEmpty">
+        <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" opacity="0.3"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+        <p>No movies saved yet</p>
+        <small>Browse and add titles to your watchlist</small>
+      </div>
+    </div>
+  </div>
+  <div class="panel-bg" id="panelBg"></div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-wrap">
+      <div class="footer-brand">
+        <div class="footer-logo">SAJJAN CINEMAS</div>
+        <p class="footer-tagline">Your premium world of movies & series. <br>Watch what you love, anytime.</p>
+        <div class="footer-socials">
+          <span>📘</span><span>🐦</span><span>📸</span><span>▶️</span>
+        </div>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h4>Browse</h4>
+          <a href="#">Home</a>
+          <a href="#">Movies</a>
+          <a href="#">TV Series</a>
+          <a href="#">Watchlist</a>
+        </div>
+        <div class="footer-col">
+          <h4>Languages</h4>
+          <a href="#">Telugu</a>
+          <a href="#">Hindi</a>
+          <a href="#">Tamil</a>
+          <a href="#">Kannada</a>
+          <a href="#">Hollywood</a>
+        </div>
+        <div class="footer-col">
+          <h4>Genres</h4>
+          <a href="#">Action</a>
+          <a href="#">Thriller</a>
+          <a href="#">Sci-Fi</a>
+          <a href="#">Drama</a>
+          <a href="#">Romance</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 SAJJAN CINEMAS. All Rights Reserved. For entertainment purposes only.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
